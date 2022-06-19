@@ -10,9 +10,12 @@
 .break {
   display: none;
 }
+@import 'blocks/titles';
+@import 'blocks/buttons';
+@import 'blocks/forms';
 @import 'blocks/promo';
 @import 'blocks/header';
-@import 'blocks/buttons';
 @import 'blocks/advantages';
-@import 'blocks/titles';
+@import 'blocks/consultation';
+
 @import 'base/media';
