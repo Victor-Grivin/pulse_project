@@ -37,7 +37,6 @@ $(document).ready(function () {
 
   itemsLink.forEach((item) => {
     item.addEventListener('click', (e) => {
-      e.preventDefault();
       item.closest('div').classList.toggle('catalog-item__content_active');
       item
         .closest('div')
@@ -47,7 +46,6 @@ $(document).ready(function () {
 
   itemsBack.forEach((item) => {
     item.addEventListener('click', (e) => {
-      e.preventDefault();
       item.closest('ul').classList.toggle('catalog-item__list_active');
       item
         .closest('ul')
