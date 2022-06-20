@@ -8,12 +8,52 @@ $(document).ready(function () {
       '<button type="button" class="slick-next"><img src="icons/right.svg"></button>',
     respinsive: [
       {
-        breakpoint: 768,
+        breakpoint: 991,
         settings: {
           dots: true,
           arrows: false,
+          adaptiveHeight: true,
         },
       },
     ],
+  });
+  $('ul.catalog__tabs').on(
+    'click',
+    'li:not(.catalog__tab_active)',
+    function () {
+      $(this)
+        .addClass('catalog__tab_active')
+        .siblings()
+        .removeClass('catalog__tab_active')
+        .closest('div.container')
+        .find('div.catalog__content')
+        .removeClass('catalog__content_active')
+        .eq($(this).index())
+        .addClass('catalog__content_active');
+    }
+  );
+  const itemsLink = document.querySelectorAll('.catalog-item__link');
+  const itemsBack = document.querySelectorAll('.catalog-item__back');
+
+  itemsLink.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      item.closest('div').classList.toggle('catalog-item__content_active');
+      item
+        .closest('div')
+        .nextElementSibling.classList.toggle('catalog-item__list_active');
+    });
+  });
+
+  itemsBack.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      item.closest('ul').classList.toggle('catalog-item__list_active');
+      item
+        .closest('ul')
+        .previousElementSibling.classList.toggle(
+          'catalog-item__content_active'
+        );
+    });
   });
 });
