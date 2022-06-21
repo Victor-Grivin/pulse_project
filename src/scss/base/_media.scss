@@ -391,4 +391,34 @@
       margin-bottom: 40px;
     }
   }
+  .modal {
+    width: 285px;
+    min-height: 357px;
+    padding: 16px 3px 11px;
+    &__close {
+      top: -11px;
+      right: 0px;
+    }
+    &__subtitle {
+      font-size: 15px;
+    }
+    &__descr {
+      font-size: 11px;
+    }
+    .feed-form {
+      align-items: center;
+      width: 280px;
+      input {
+        width: 83%;
+        margin-bottom: 15px;
+        padding: 0px 20px;
+        font-size: 14px;
+      }
+      .button_submit {
+        width: 84%;
+        height: 53px;
+        font-size: 15px;
+      }
+    }
+  }
 }
